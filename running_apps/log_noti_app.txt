@@ -1,0 +1,15 @@
+INFO:     Started server process [78593]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8689 (Press CTRL+C to quit)
+INFO:     Shutting down
+INFO:     Finished server process [78593]
+ERROR:    Traceback (most recent call last):
+  File "/home/airflow/Codes/fastAPI_for_airflow_project/fastapi-venv/lib/python3.9/site-packages/starlette/routing.py", line 686, in lifespan
+    await receive()
+  File "/home/airflow/Codes/fastAPI_for_airflow_project/fastapi-venv/lib/python3.9/site-packages/uvicorn/lifespan/on.py", line 137, in receive
+    return await self.receive_queue.get()
+  File "/usr/local/lib/python3.9/asyncio/queues.py", line 166, in get
+    await getter
+asyncio.exceptions.CancelledError
+
