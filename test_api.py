@@ -2,6 +2,8 @@ import json
 
 import requests
 
+# curl -d '{"title":"my title", "message":"my message", "uidUsername":"my name", "guidGroupNameAlias":"DWH_JOB_NOTI"}' -X POST -H 'token: 0735fd9182d039594c4fa435505986db7d15BHea' -H 'Content-Type: application/json' --insecure http://10.210.12.92:8688/dataApi/dLinkNoti/group 
+
 url = 'http://127.0.0.1:8000/job/import?job_name=Northwind_orders_SyncJob'
 
 response = requests.get(url=url)
