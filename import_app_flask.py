@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 
 from dir_import_app.define_job_import import LIST_JOB
 
@@ -16,8 +16,10 @@ def get_help():
     return {"message": "This is a help string"}, 200
 
 
-@import_app.route("/job/import")
-def import_data(job_name : str):
+@import_app.route("/job/import", methods = ['GET'])
+def import_data():
+    job_name = request.args.get('job_name')
+    # print(request.args['job_name'])
     if job_name in LIST_JOB.keys():
         LIST_JOB[job_name]()
         return {"message" : f"import '{job_name}' successfully", "status" : 200}
@@ -26,4 +28,4 @@ def import_data(job_name : str):
 
 
 if __name__ == '__main__':
-    import_app.run(debug=True, port=8689)
+    import_app.run(debug=True, port=8688)
