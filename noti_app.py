@@ -43,7 +43,7 @@ def delete_all_tokens(request : Request):
         au.delete_all_active_tokens()
         return {"message": "Deletes all tokens sucessfully"}
     else:
-        raise HTTPException(status_code=401, detail=f"Your host is not accepted!")
+        raise HTTPException(status_code=401, detail=f"Your host is not accepted to do this action!")
 
 
 #############################################
@@ -66,7 +66,7 @@ def noti_dlink(info : params, request : Request):
             group_name= info.guidGroupNameAlias
         )
     else:
-        raise HTTPException(status_code=401, detail=f"Authentication got error!")
+        raise HTTPException(status_code=401, detail=f"Authentication is not success!")
 
     return info
 
